@@ -1,0 +1,45 @@
+# 配置文件（含 API keys）
+opencode.json
+
+# 環境變量
+.env
+.env.local
+.env.*.local
+.env.*.internal
+.env.sensitive
+
+# 內部運營文檔（包含敏感信息）
+DB_OPERATIONS_INTERNAL.md
+INTERNAL_ACCESS.md
+*.internal.md
+.gitignore.internal
+internal_operations/
+operations/
+
+# 依賴
+node_modules/
+
+# 構建輸出
+dist/
+dist-ssr/
+*.local
+
+# 編輯器
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 日誌
+*.log
+
+# 新聞數據（CSV 源文件和去重副本）
+data/news_raw.csv
+data/news_raw_deduped.csv
+logs/
+
+# Vercel
+.vercel

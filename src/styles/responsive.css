@@ -1,0 +1,288 @@
+/* ==========================================
+   響應式設計斷點
+   ========================================== */
+
+@import './variables.css';
+
+/* 超大桌面 (≥1600px) */
+@media (min-width: 1600px) {
+  .page {
+    max-width: 1680px;
+  }
+}
+
+/* 標準桌面 (1200-1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .page {
+    max-width: 1480px;
+  }
+  
+  .main {
+    grid-template-columns: 1fr 330px;
+  }
+}
+
+/* 橫向平板 (992-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .page {
+    max-width: 100%;
+    padding: 12px 16px;
+  }
+  
+  .main {
+    grid-template-columns: 1fr 280px;
+    gap: 10px;
+  }
+  
+  .flow-card {
+    min-height: 380px;
+  }
+  
+  .news-panel {
+    max-height: calc(100vh - 100px);
+  }
+}
+
+/* 縱向平板 (768-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .page {
+    padding: 10px 14px;
+  }
+  
+  .main {
+    grid-template-columns: 1fr;
+  }
+  
+  .news-panel {
+    max-height: 400px;
+    position: static;
+    margin-top: 12px;
+  }
+  
+  .detail-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .macro {
+    gap: 4px;
+  }
+  
+  .mc {
+    font-size: 0.68em;
+    padding: 3px 8px;
+  }
+}
+
+/* 大手機 (576-767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .page {
+    padding: 8px 12px;
+  }
+  
+  h1 {
+    font-size: 1.3em;
+  }
+  
+  .sub {
+    font-size: 0.72em;
+  }
+  
+  .main {
+    grid-template-columns: 1fr;
+  }
+  
+  .news-panel {
+    max-height: 350px;
+    position: static;
+    margin-top: 10px;
+  }
+  
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .macro {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .mc {
+    font-size: 0.62em;
+    padding: 3px 7px;
+    min-width: 70px;
+  }
+  
+  .alert {
+    padding: 8px 10px;
+    font-size: 0.75em;
+  }
+  
+  .flow-card {
+    min-height: 320px;
+  }
+  
+  /* 表格優化 */
+  .sw-table {
+    font-size: 0.72em;
+  }
+  
+  .sw-table th:nth-child(4),
+  .sw-table td:nth-child(4) {
+    display: none;
+  }
+}
+
+/* 小手機 (<576px) */
+@media (max-width: 575px) {
+  .page {
+    padding: 6px 10px;
+  }
+  
+  h1 {
+    font-size: 1.2em;
+  }
+  
+  .sub {
+    display: none;
+  }
+  
+  .macro {
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  
+  .mc {
+    font-size: 0.58em;
+    padding: 2px 5px;
+    min-width: 65px;
+  }
+  
+  .alert {
+    padding: 8px 10px;
+    font-size: 0.7em;
+    flex-direction: column;
+  }
+  
+  .alert span[style*="font-size"] {
+    font-size: 1.2em !important;
+  }
+  
+  .main {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .news-panel {
+    max-height: 300px;
+    position: static;
+    margin-top: 8px;
+  }
+  
+  .flow-card {
+    min-height: 280px;
+  }
+  
+  /* 表格大幅简化 */
+  .sw-table th:nth-child(3),
+  .sw-table td:nth-child(3),
+  .sw-table th:nth-child(5),
+  .sw-table td:nth-child(5) {
+    display: none;
+  }
+  
+  .sw-table {
+    font-size: 0.68em;
+  }
+  
+  /* 简化進度條 */
+  .prog {
+    width: 50px;
+  }
+  
+  .detail-card {
+    padding: 10px;
+    min-height: 180px;
+  }
+  
+  .detail-card h3 {
+    font-size: 0.8em;
+  }
+  
+  /* 概率條垂直排列 */
+  .pbar {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .pseg {
+    width: 100% !important;
+    padding: 6px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* 超小手機 (<375px) */
+@media (max-width: 374px) {
+  .page {
+    padding: 4px 8px;
+  }
+  
+  h1 {
+    font-size: 1.1em;
+  }
+  
+  .mc {
+    font-size: 0.54em;
+    padding: 2px 4px;
+    min-width: 60px;
+  }
+  
+  .flow-card {
+    min-height: 250px;
+  }
+  
+  .news-hdr {
+    font-size: 0.8em;
+  }
+  
+  .ni {
+    padding: 6px 8px;
+  }
+  
+  .nt {
+    font-size: 0.75em !important;
+  }
+}
+
+/* 橫向模式優化 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .page {
+    padding: 8px 12px;
+  }
+  
+  .macro {
+    margin-bottom: 6px;
+  }
+  
+  .main {
+    gap: 8px;
+  }
+  
+  .news-panel {
+    max-height: 200px;
+  }
+  
+  .flow-card {
+    min-height: 200px;
+  }
+  
+  .detail-row {
+    gap: 8px;
+  }
+  
+  .detail-card {
+    min-height: 150px;
+  }
+}

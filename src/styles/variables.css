@@ -1,0 +1,102 @@
+/* ==========================================
+   Investment Path Tracker - CSS 變量系統
+   金融科技感深空黑主題
+   ========================================== */
+
+:root {
+  /* 背景色系 */
+  --bg-primary: #080c18;
+  --bg-card: rgba(13, 20, 38, 0.9);
+  --bg-glass: rgba(13, 20, 38, 0.85);
+  --bg-overlay: rgba(8, 12, 24, 0.92);
+
+  /* 邊框色系 */
+  --border-primary: rgba(71, 85, 105, 0.25);
+  --border-light: rgba(71, 85, 105, 0.1);
+  --border-strong: rgba(71, 85, 105, 0.4);
+
+  /* 文字色系 */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #475569;
+
+  /* 路徑色系 (5 條路徑) */
+  --path-a: #4ade80;  /* 綠 - 金髮女孩 */
+  --path-b: #fbbf24;  /* 黃 - 滯脹迷霧 */
+  --path-c: #f87171;  /* 紅 - 硬著陸 */
+  --path-d: #a78bfa;  /* 紫 - 黑天鵝 */
+  --path-e: #f472b6;  /* 粉 - 再通膨 */
+
+  /* 輔助色系 */
+  --accent-blue: #60a5fa;
+  --accent-orange: #f97316;
+
+  /* 狀態色系 */
+  --status-hot: #f87171;
+  --status-warn: #fbbf24;
+  --status-normal: #94a3b8;
+  --status-positive: #4ade80;
+
+  /* 玻璃態效果 */
+  --glass-blur: blur(12px);
+  --glass-border: 1px solid rgba(71, 85, 105, 0.25);
+
+  /* 陰影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(244, 114, 182, 0.3);
+
+  /* 漸變 */
+  --gradient-title: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  --gradient-path-a: linear-gradient(135deg, #4ade80, #22c55e);
+  --gradient-path-b: linear-gradient(135deg, #fbbf24, #f59e0b);
+  --gradient-path-c: linear-gradient(135deg, #f87171, #ef4444);
+  --gradient-path-d: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  --gradient-path-e: linear-gradient(135deg, #f472b6, #ec4899);
+
+  /* 字體 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Noto Sans TC', sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+
+  /* 間距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+
+  /* 圓角 */
+  --radius-sm: 4px;
+  --radius-md: 7px;
+  --radius-lg: 11px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+
+  /* 過渡 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index 層級 */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-tooltip: 1000;
+}
+
+/* 字體大小 */
+:root {
+  --text-xs: 0.66em;
+  --text-sm: 0.72em;
+  --text-base: 0.78em;
+  --text-lg: 0.82em;
+  --text-xl: 0.85em;
+  --text-2xl: 0.9em;
+  --text-3xl: 1.05em;
+  --text-4xl: 1.2em;
+  --text-5xl: 1.35em;
+  --text-6xl: 1.55em;
+}

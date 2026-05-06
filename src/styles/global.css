@@ -1,0 +1,162 @@
+/* ==========================================
+   全局樣式重置與基礎樣式
+   ========================================== */
+
+@import './variables.css';
+@import '../../stitch-designs/stitch-design-tokens.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(71, 85, 105, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.7);
+}
+
+/* 選取樣式 */
+::selection {
+  background: rgba(244, 114, 182, 0.3);
+  color: var(--text-primary);
+}
+
+/* 連結樣式 */
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--path-e);
+}
+
+/* 按鈕基礎樣式 */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* 輸入框基礎樣式 */
+input, textarea {
+  font-family: var(--font-family);
+  font-size: inherit;
+  color: inherit;
+  background: rgba(20, 30, 55, 0.6);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+/* 禁用狀態 */
+.disabled, [disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 模糊效果 */
+.blur-lock {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 付費鎖定遮罩 */
+.premium-lock {
+  position: relative;
+}
+
+.premium-lock::after {
+  content: '🔒 Pro';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 24, 0.7);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: var(--path-e);
+  border-radius: var(--radius-md);
+}
+
+/* 玻璃態卡片 */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--radius-2xl);
+}
+
+/* 漸變文字 */
+.gradient-text {
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 光暈效果 */
+.glow {
+  filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.4));
+}
+
+.glow-strong {
+  filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.6));
+}
+
+/* 科技感網格背景 */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(71, 85, 105, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 85, 105, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 動畫延遲工具類 */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }

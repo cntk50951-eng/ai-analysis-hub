@@ -1,0 +1,494 @@
+/**
+ * Stitch Design System 2026 - Dashboard Theme
+ * 導出自：Investment Path Platform 2026
+ * Screen ID: a37d0a92813a454e920c1aab1256b711
+ */
+
+/* ========================================
+   CSS Variables - Design Tokens
+======================================== */
+:root {
+  /* Surface Colors - Deep Space Theme */
+  --surface: #080e1a;
+  --surface-dim: #080e1a;
+  --surface-bright: #232c3e;
+  --surface-container-lowest: #000000;
+  --surface-container-low: #0d1320;
+  --surface-container: #131a28;
+  --surface-container-high: #18202f;
+  --surface-container-highest: #1e2637;
+  --surface-variant: #1e2637;
+  --surface-tint: #a3a6ff;
+
+  /* Primary - Indigo */
+  --primary: #a3a6ff;
+  --primary-dim: #6063ee;
+  --primary-container: #9396ff;
+  --primary-fixed: #9396ff;
+  --primary-fixed-dim: #8387ff;
+  --on-primary: #0f00a4;
+  --on-primary-container: #0a0081;
+  --on-primary-fixed: #000000;
+  --on-primary-fixed-variant: #0e009d;
+  --inverse-primary: #494bd7;
+
+  /* Secondary - Purple */
+  --secondary: #c180ff;
+  --secondary-dim: #9c48ea;
+  --secondary-container: #6f00be;
+  --secondary-fixed: #e5c6ff;
+  --secondary-fixed-dim: #dbb4ff;
+  --on-secondary: #33005b;
+  --on-secondary-container: #e9cdff;
+  --on-secondary-fixed: #4f0089;
+  --on-secondary-fixed-variant: #7511c3;
+
+  /* Tertiary - Cyan */
+  --tertiary: #7de9ff;
+  --tertiary-dim: #1ad0eb;
+  --tertiary-container: #3adffa;
+  --tertiary-fixed: #3adffa;
+  --tertiary-fixed-dim: #1ad0eb;
+  --on-tertiary: #005561;
+  --on-tertiary-container: #004b56;
+  --on-tertiary-fixed: #00363e;
+  --on-tertiary-fixed-variant: #005561;
+
+  /* Error - Pink/Red */
+  --error: #ff6e84;
+  --error-dim: #d73357;
+  --error-container: #a70138;
+  --on-error: #490013;
+  --on-error-container: #ffb2b9;
+
+  /* Neutral Colors */
+  --background: #080e1a;
+  --on-background: #e0e5f6;
+  --on-surface: #e0e5f6;
+  --on-surface-variant: #a6abbb;
+  --inverse-surface: #f9f9ff;
+  --inverse-on-surface: #4f5563;
+  --outline: #707584;
+  --outline-variant: #424855;
+
+  /* Path Colors - Investment Scenarios */
+  --path-a: #10b981;    /* Green - Bullish */
+  --path-b: #f59e0b;    /* Amber - Neutral */
+  --path-c: #ff6e84;    /* Red - Bearish */
+  --path-d: #c180ff;    /* Purple - Volatile */
+  --path-e: #ec4899;    /* Pink - High Risk */
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* Spacing Scale */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+}
+
+/* ========================================
+   Base Styles
+======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark {
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+/* ========================================
+   Typography
+======================================== */
+.font-headline {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+/* ========================================
+   Glass Morphism Components
+======================================== */
+.glass-panel {
+  background: rgba(30, 38, 55, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(66, 72, 85, 0.1);
+}
+
+.glass-panel-strong {
+  background: rgba(13, 19, 32, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ========================================
+   Node Glow Effects
+======================================== */
+.glow-node-green {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.glow-node-amber {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.glow-node-red {
+  box-shadow: 0 0 15px rgba(255, 110, 132, 0.3);
+  border: 1px solid rgba(255, 110, 132, 0.4);
+}
+
+.glow-node-purple {
+  box-shadow: 0 0 15px rgba(193, 128, 255, 0.3);
+  border: 1px solid rgba(193, 128, 255, 0.4);
+}
+
+.glow-node-pink {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+/* Glow Animation for Current Path */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(163, 166, 255, 0.3);
+    opacity: 0.12;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(163, 166, 255, 0.5);
+    opacity: 0.45;
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+   Material Symbols
+======================================== */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ========================================
+   Layout Utilities
+======================================== */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-2 { gap: var(--spacing-2); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-6 { gap: var(--spacing-6); }
+.gap-8 { gap: var(--spacing-8); }
+
+/* ========================================
+   Component Styles
+======================================== */
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 15px rgba(163, 166, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--on-surface-variant);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid rgba(112, 117, 132, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background-color: var(--surface-container-highest);
+  color: var(--on-surface);
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface-container);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  border: 1px solid rgba(66, 72, 85, 0.1);
+}
+
+.card-interactive {
+  transition: all 0.2s ease;
+}
+
+.card-interactive:hover {
+  background-color: var(--surface-container-high);
+  transform: translateY(-2px);
+}
+
+/* Progress Bars */
+.progress-bar {
+  width: 100%;
+  height: 0.375rem;
+  background-color: var(--surface-container);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.5s ease;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+}
+
+.badge-stable {
+  background-color: rgba(125, 233, 255, 0.1);
+  color: var(--tertiary);
+  border-color: rgba(125, 233, 255, 0.2);
+}
+
+.badge-risk {
+  background-color: rgba(255, 110, 132, 0.1);
+  color: var(--error);
+  border-color: rgba(255, 110, 132, 0.2);
+}
+
+.badge-completing {
+  background-color: rgba(193, 128, 255, 0.1);
+  color: var(--secondary);
+  border-color: rgba(193, 128, 255, 0.2);
+}
+
+/* News Cards */
+.news-card {
+  background-color: var(--surface-container-high);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  border-left: 4px solid;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.news-card-critical {
+  border-left-color: #ec4899;
+}
+
+.news-card-medium {
+  border-left-color: #f59e0b;
+}
+
+.news-card-positive {
+  border-left-color: #10b981;
+}
+
+.news-card-info {
+  border-left-color: var(--primary);
+}
+
+/* ========================================
+   Animation Utilities
+======================================== */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+.transition-colors {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.transition-transform {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Responsive Utilities
+======================================== */
+@media (max-width: 768px) {
+  :root {
+    --spacing-6: 1rem;
+    --spacing-8: 1.5rem;
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* ========================================
+   Focus States
+======================================== */
+:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Scrollbar Styles
+======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--outline);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline-variant);
+}
+
+/* ========================================
+   Utility Classes
+======================================== */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

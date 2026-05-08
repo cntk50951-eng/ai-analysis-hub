@@ -316,11 +316,16 @@ async function seed() {
     // 插入標籤
     for (const tag of sampleTags) {
       const topicId = topicIds[tag.topic_index];
-      await query(
-        `INSERT INTO topic_tags (topic_id, tag, tag_type) VALUES ($1, $2, $3)
-         ON CONFLICT (topic_id, tag, user_id) DO NOTHING`,
-        [topicId, tag.tag, tag.tag_type]
+      const existingTag = await query(
+        `SELECT id FROM topic_tags WHERE topic_id = $1 AND tag = $2 AND user_id IS NULL`,
+        [topicId, tag.tag]
       );
+      if (existingTag.rows.length === 0) {
+        await query(
+          `INSERT INTO topic_tags (topic_id, tag, tag_type) VALUES ($1, $2, $3)`,
+          [topicId, tag.tag, tag.tag_type]
+        );
+      }
     }
     console.log(`✅ 插入 ${sampleTags.length} 個標籤`);
 
